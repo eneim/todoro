@@ -1,0 +1,20 @@
+/bin
+/db/*
+/logs/*
+/tmp/*
+/test-result
+README.md
+.DS_Store
+._*
+*~
+# for eclipse
+/eclipse
+.classpath
+.project
+.settings
+!/public/
+/public/*
+!/public/fonts/
+!/public/images/
+!/public/javascripts/
+!/public/stylesheets/
