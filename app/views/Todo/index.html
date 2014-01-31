@@ -1,0 +1,154 @@
+*{<meta charset="utf-8">}*
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+
+<![endif]-->
+<!--[if IE 7]>
+
+<html class="lt-ie9 lt-ie8" lang="en">
+
+<![endif]-->
+<!--[if IE 8]>
+
+<html class="lt-ie9" lang="en">
+
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+<html lang="en">
+<!--
+<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        iTodo
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/style_todolist.css'}" />
+    <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/jquery.simple-dtpicker.css'}" />
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js">
+    </script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js">
+    </script>
+    <script type="text/javascript" src="@{'/public/javascripts/jquery.simple-dtpicker.js'}">
+    </script>
+    <script type="text/javascript" src="@{'/public/javascripts/todo.js'}">
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->
+</head>
+
+<body>
+    <h1 class="body-title">
+      Welcome to your list
+  	</h1> 
+
+    <div class="container" id="main">
+
+        <section class="todo">
+            <div id="deadlineset">
+                <dt><p>Set a deadline:</br>
+  	  			<input id="deadline" type="text" name="_date" value=""/></p>
+  				<p class="deadline-button">
+  					<a href="javascript:void(0);" style="text-decoration: none" onclick="onClickDoneToAdd()">Done</a>
+  					<a href="javascript:void(0);" style="text-decoration: none" onclick="onClickNoDeadLineToAdd()">No Deadline</a>
+  					<a href="javascript:void(0);" style="text-decoration: none" onclick="onClickCancelAdding()">Cancel</a>
+  				</p>
+  			</dt>
+            </div>
+
+            <ul class="todo-controls">
+                <li>
+                <a href="javascript:void(0);" onclick="logout()">(logout)</a>       
+                </li>
+                <li>
+                Signed in as: ${user.getUserName()} 
+                </li>              
+            </ul>
+
+            <ul class="todo-list">
+                <li>
+                <form id="newtask" action="javascript:addItem();">
+                    <header id="header">
+                        <input id="new-todo" type="text" name="context" size="35" placeholder="add new task here" value="" />
+                    </header>
+                    </form>
+                </li>
+			</ul>
+			
+			<ul id="undonelist" class="todo-list">
+
+				#{list items: undone_items, as: 'item'}
+                <li name='undone' ondblclick="var itemId = document.getElementById('${item.getItemId()}'); editItem(itemId)">
+                    <input type='checkbox' id=${item.getItemId()} />
+                    <label class='toggle' for='${item.getItemId()}' 
+                        onclick="var itemId = document.getElementById('${item.getItemId()}'); onDoneClick(itemId);">
+                    </label>
+                    <div class='content' name='content' id='content'>${item.getContent()}</div>
+                    <div class='created' id='created'>created: ${item.getCreated()}</div>
+                    <div class='deadline' id='deadline'>${item.deadLine}</div>
+                </li>
+                #{/list}
+            </ul>
+            
+            <ul id="donelist" class="todo-list">
+                #{list items: done_items, as: 'item'}
+                <li class="done" name="done" ondblclick="editItem()">
+                    <input class="checker" type="checkbox" id=${item.getItemId()} checked/>
+                    <label class="toggle" for="${item.getItemId()}" 
+                    	onclick="var itemId = document.getElementById('${item.getItemId()}'); onDoneClick(itemId);">
+                    </label>
+                    <div class='completed' name="content" id="content">${item.getContent()}</div>                    
+                    <div id="created">created: ${item.getCreated()}</div>
+                    <div id="deadline">${item.deadLine}</div>
+                </li>
+                #{/list}                
+            </ul>
+
+            <ul class="todo-pagination">
+                <li>
+                	<a href="javascript:void(0);" onclick="showAll()">
+                		All
+                	</a>
+                </li>
+                <li>
+                	<a href="javascript:void(0);" onclick="showActive()">
+                		Active
+                	</a>
+                </li>
+                
+                <li>
+                	<a href="javascript:void(0);" onclick="showCompleted()">
+                		Completed
+                	</a>
+                </li>
+                
+                <li class="right">
+                	<a href="javascript:void(0);" onclick="clearTasks()">
+                		Clear Completed
+                	</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <section class="about">
+        <p class="about-author">
+            &copy; 2012&ndash;2013 Thibaut Courouble - MIT License
+            <br>Original PSD by
+            <font color="#404040">
+        Facundo Gonzalez
+      </a>
+    </p>
+  </section> 
+  
+  </body>
+</html>

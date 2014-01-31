@@ -1,0 +1,60 @@
+*{<meta charset="utf-8">}*
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Login Form</title>
+  <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/style_login.css'}" />
+	<link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/jquery.simple-dtpicker.css'}" />
+
+  
+    <script type="text/javascript" src="@{'/public/javascripts/login.js'}">
+    </script>
+    
+</head>
+<body>
+	<section class="container">	
+    	<div class="login">
+    	
+    	<div id="login_error">
+  			<dt><p>Incorrect input!</br>
+  	  			<p class="error-button">
+  					<a href="javascript:void(0);" onclick="retry(); return true;" style="text-decoration: none">Retry</a>
+  					
+  				</p>
+  			</dt>
+  		</div> 
+  		
+      		<h1>Login to iTodo</h1>
+      		<form>
+      			<p><input type="text" id="login" name="login" value="" placeholder="Username"></p>
+        		<p><input type="password" id="password" name="password" value="" placeholder="Password"></p>
+        		<p class="remember_me">
+          			<label>
+            			<input type="checkbox" name="remember_me" id="remember_me">
+            			Remember me on this computer
+          			</label>
+        		</p>
+        		     		
+      		</form>
+      		<p class="submit"><input type="submit" name="commit" value="Login" onclick="login()"></p>
+      		
+    	</div>
+
+		<div class="login-help">
+      		<p>Don't have an account'? <a href="@{Signup.index()}">Click here to signup</a>.</p>
+    	</div>
+    
+    	<div class="login-help">
+    		<p>Forgot your password? <a href="javascript:void(0);">Click here to reset it</a>.</p>
+       	</div>
+  	</section>
+
+  	<section class="about">
+    	<p class="about-author">
+      		&copy; 2012&ndash;2013 Thibaut Courouble - MIT License<br>
+      		Original PSD by Orman Clark
+  		</p>
+  	</section>
+</body>
+</html>

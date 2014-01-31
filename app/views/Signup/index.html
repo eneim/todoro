@@ -1,0 +1,27 @@
+*{<meta charset="utf-8">}*
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Register to iTodo</title>
+  <link rel="stylesheet" type="text/css" 
+                       href="@{'/public/stylesheets/style_signup.css'}"></link>
+   <script type="text/javascript" src="@{'/public/javascripts/signup.js'}">
+    </script>
+</head>
+<body>
+	<h1 class="register-title">Welcome to iTodo</h1>
+  		<form class="register" action="javascript:onSignup();">
+  			<p id="error"></p>
+    		<input id="u_name" type="text" name="user_name" class="register-input" value="" placeholder="Username" onblur="onCheckInputUser()">
+    		<input id="e_mail" type="email" name="email" class="register-input" value="" placeholder="Email address" onblur="onCheckInputEmail()" >
+    		<input id="p_word" type="password" name="password" class="register-input" valeu="" placeholder="Password" >   		
+			<input type="submit" value="Create Account" class="register-button">		
+  		</form>
+  	<section class="about">
+    	<p class="about-author">
+      		&copy; 2012&ndash;2013 Thibaut Courouble - MIT License<br>
+      		Original PSD by Orman Clark
+      	</p>
+  	</section>
+</body>
+</html>

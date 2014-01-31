@@ -1,0 +1,6 @@
+CompilerOracle: exclude jregex/Pretokenizer.next
+Listening for transport dt_socket at address: 8000
+02:56:43,193 INFO  ~ Starting H:\Dropbox\Education\Android Workspace (Mac)\exp4todo
+02:56:43,561 WARN  ~ You're running Play! in DEV mode
+02:56:43,627 INFO  ~ Listening for HTTP on port 9001 (Waiting a first request to start) ...
+~ Server is up and running

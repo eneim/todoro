@@ -1,0 +1,516 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.about {
+    margin: 70px auto 40px;
+    padding: 8px;
+    width: 260px;
+    font: 10px/18px 'Lucida Grande', Arial, sans-serif;
+    color: #8b8f97;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 6px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.about a {
+    color: #eee;
+    text-decoration: none;
+    border-radius: 2px;
+    -webkit-transition: background 0.1s;
+    -moz-transition: background 0.1s;
+    -o-transition: background 0.1s;
+    transition: background 0.1s;
+}
+
+.about a:hover {
+    text-decoration: none;
+    background: #555;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.about-links {
+    height: 30px;
+}
+
+.about-links > a {
+    float: left;
+    width: 50%;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.about-author {
+    margin-top: 5px;
+}
+
+.about-author > a {
+    padding: 1px 3px;
+    margin: 0 -1px;
+}
+  
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+body {
+    font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
+    color: #404040;
+    background: #f8f6f6;
+}
+
+.body-title {
+    width: 270px;
+    line-height: 43px;
+    margin: 50px auto 20px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #494d59;
+    text-align: center;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background: #f4f4f4;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    margin: 50px auto;
+    width: 480px;
+}
+
+.container .todo {
+    margin: 0 auto;
+}
+
+.todo {
+    position: relative;
+    width: 450px;
+    padding: 12px 0;
+    padding-top: 0px;
+    background: white;
+    border: 1px solid;
+    border-color: #dfdcdc #d9d6d6 #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.todo:before, .todo:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 4px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.todo:after {
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.todo:before {
+    bottom: -5px;
+    left: 2px;
+    right: 2px;
+    border-color: #c4c4c4;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.lt-ie9 .todo:before, .lt-ie9 .todo:after {
+    height: 1px;
+    border-top: 0;
+}
+
+.todo-list {	
+    border-top: 1px solid #e6ebed;
+}
+
+.todo-list:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 35px;
+    width: 3px;
+    z-index: 2;
+    border: 1px solid #f2e3df;
+    border-width: 0 1px;
+}
+
+.todo-list li {
+    position: relative;
+    height: auto;
+    overflow: auto;
+    padding: 7px 15px 7px 50px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #8b8f97;
+    border-bottom: 1px solid #e6ebed;
+}
+
+.todo-list li #content { 
+	width:250px;
+	font-size: 16px; 
+	line-height: 20px; 
+	color: #3a6da6; 
+	text-shadow: 0 1px 0 #fff; 
+}
+
+.todo-list li #created {
+	float: left; 
+	margin-top: 5px; 
+	font-size: 8px; 
+	line-height: 15px; 
+}
+
+.todo-list li #deadline {
+	font-size: 12px;
+    float: right;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]:checked + .toggle:after {
+    opacity: 1;
+}
+
+.todo-list .toggle {
+    display: block;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    text-indent: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.toggle:after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 3px;
+    background: transparent;
+    top: 14px;
+    left: 13px;
+    border: 2px solid #aaa;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    opacity: 0;
+}
+
+.todo-list .toggle:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #faf9f9;
+    border: 1px solid #6bb3ca;
+    border-radius: 2px;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    -webkit-box-shadow: 0 1px 1px #dfecf4;
+    -moz-box-shadow: 0 1px 1px #dfecf4;
+    box-shadow: 0 1px 1px #dfecf4;
+}
+
+.todo-list .toggle:hover:before {
+    -webkit-box-shadow: 0 0 3px #6bb3ca;
+    -moz-box-shadow: 0 0 3px #6bb3ca;
+    box-shadow: 0 0 3px #6bb3ca;
+}
+
+.todo-list .done {
+	color: #a9a9a9;
+	text-decoration: line-through;
+}
+.todo-list .done .toggle:before, .todo-list .toggle:active:before {
+    border-color: #c0c0c0 #ccc #d8d8d8;    
+    -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 5px 5px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 5px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.todo-controls {
+    position: relative;
+    padding: 12px 15px 2px 50px;
+    color: #8b8f97;
+    border-bottom: 1px solid #e6ebed;
+    height: 22px;
+}
+
+.todo-controls li {
+	padding-right: 4px;
+	display: inline;
+    float: right;
+}
+
+.todo-controls li + li {
+    margin-left: 10px;
+}
+
+.todo-controls .right {
+    float: right;
+    display: inline;
+}
+
+.todo-controls a {
+    display: block;
+    margin: 0;
+    opacity: .6;
+}
+
+.todo-controls a:hover {
+    opacity: 1;
+}
+
+.todo-pagination {
+    margin: 12px 12px 0 50px;
+    height: 22px;
+}
+
+.todo-pagination li {
+	float: left;
+}
+
+.todo-pagination .right {
+    float: right;
+}
+
+.todo-pagination .next i {
+    margin: 0 0 0 2px;
+}
+
+.todo-pagination a, .todo-pagination span {
+    display: block;
+    line-height: 22px;
+    font-size: 11px;
+    color: #676f7f;
+}
+
+.todo-pagination a {
+    padding: 0 8px;
+    text-decoration: none;
+    text-shadow: 0 1px white;
+    
+    border-radius: 3px;
+}
+
+.todo-pagination a:hover {
+    background: #e9e9e9;
+}
+
+.todo-pagination span {
+    padding: 0 4px;
+    opacity: .3;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 2px;
+    width: 12px;
+    height: 12px;
+    background-image: url('/public/images/sprite.png');
+    background-repeat: no-repeat;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+}
+
+.icon-check {
+    background-position: 0 0;
+}
+
+.icon-add {
+    background-position: -12px 0;
+}
+
+.icon-delete {
+    background-position: -24px 0;
+}
+
+.icon-settings {
+    background-position: -36px 0;
+}
+
+.icon-previous {
+    background-position: -48px 0;
+}
+
+.icon-next {
+    background-position: -60px 0;
+}
+ 
+/*
+ * modified version of
+ *
+ * https://github.com/tastejs/todomvc/blob/gh-pages/architecture-examples/jquery/bower_components/todomvc-common/base.css
+ *
+ */
+  
+#header {
+    border-radius: inherit;
+}
+ 
+/*
+#header:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 15px;
+        z-index: 2;
+        border-bottom: 1px solid #6c615c;
+        background: #8d7d77;
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(132, 110, 100, 0.8)),to(rgba(101, 84, 76, 0.8)));
+        background: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+        background: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#9d8b83', EndColorStr='#847670');
+        border-top-left-radius: 1px;
+        border-top-right-radius: 1px;
+}
+*/
+ 
+#new-todo,
+.edit {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    font-family: inherit;
+    border: 0;
+    outline: none;
+    color: inherit;
+    border: 1px solid #999;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+#new-todo {
+    border: none;
+    z-index: 2;
+    box-shadow: none;
+}
+ 
+/* ---------------- */
+ 
+#deadlineset {
+     visibility: hidden;
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     width: 100%;
+     height: 100%;
+     text-align:center;
+     z-index: 1000;
+}
+
+#deadlineset dt {
+     width: 240px;
+     margin: 100px auto;
+     background-color: #fff;     
+     padding:15px;
+     text-align:center;
+     
+     border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0.5px 0.5px 0px #c8c8c8;
+    -webkit-box-shadow: 0.5px 0.5px 3px #eeeeee;
+    -moz-box-shadow: 0.5px 0.5px 3px #eeeeee;
+}
+
+.deadline-button {
+	margin-top: 15px;
+}
+
+.deadline-button a {
+    display: inline-block;
+    padding: 5px 8px;
+    margin: 5px 5px 0 0;
+    line-height: 13px;
+    font-size: 12px;
+    background-color: #bebebe;
+    color: #fff !important;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
